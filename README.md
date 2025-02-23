@@ -13,7 +13,7 @@ L'objectif de ce projet est de fournir un ensemble d'exercices pratiques pour :
 
 1. **Cloner le dépôt** :
     ```bash
-    git clone https://github.com/ton-username/ton-depot-dart.git
+    git clone https://github.com/VisorAsh/Dart-Learning-Exercises.git
     cd ton-depot-dart
 2. **Tester le code sur DartPad** : 
     - DartPad est un outil en ligne gratuit pour exécuter du code Dart sans avoir à installer quoi que ce soit.
@@ -21,9 +21,9 @@ L'objectif de ce projet est de fournir un ensemble d'exercices pratiques pour :
     - Copie et colle le code d'un des fichiers dans DartPad.
     - Exécute le code pour voir le résultat.
 3. **Explorer les exercices** :
-    Chaque fichier contient un exercice spécifique avec des explications et une solution.
-    L'ensemble des exercices est contenu dans le fichier main.dart.
-    N'hésite pas à modifier le code pour expérimenter et mieux comprendre les concepts.
+    - Chaque fichier contient un exercice spécifique avec des explications et une solution.
+    - L'ensemble des exercices est contenu dans le fichier main.dart.
+    - N'hésite pas à modifier le code pour expérimenter et mieux comprendre les concepts.
 
 ## Liste des exercices
 1. FizzBuzz : Affiche "Fizz", "Buzz" ou "FizzBuzz" en fonction des multiples de 3 et 5.
@@ -39,4 +39,4 @@ L'objectif de ce projet est de fournir un ensemble d'exercices pratiques pour :
 Si tu as des suggestions pour améliorer ces exercices ou si tu veux en ajouter de nouveaux, n'hésite pas à ouvrir une issue ou à soumettre une pull request. Toute contribution est la bienvenue !
 
 ## Licence
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est sous licence MIT.
