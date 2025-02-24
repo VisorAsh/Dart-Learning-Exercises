@@ -1,3 +1,5 @@
+import 'dart:async';
+
 void main() {
   //   for (var i = 0; i < 5; i++) {
   //     print('hello ${i + 1}');
@@ -32,6 +34,34 @@ void main() {
   Person person = Person("John Doe", 42);
   person.introduce();
   print({'name': person.name, 'age': person.age});
+
+  // Function divide
+  print(divide(10, 2));
+  print(divide(10, 0));
+
+  print(divide3(10, 2));
+  print(divide3(10, 0));
+
+  print('10 + 5 = ${calculate(10, 5, '+')}');
+  print('10 - 5 = ${calculate(10, 5, '-')}');
+  print('10 * 5 = ${calculate(10, 5, '*')}');
+  print('10 / 5 = ${calculate(10, 5, '/')}');
+  print('10 / 0 = ${calculate(10, 0, '/')}');
+  print('10 ? 5 = ${calculate(10, 5, '?')}');
+
+  // Streams
+  Stream<int> numberStream = Stream.periodic(
+    Duration(seconds: 1),
+    (value) => value + 1,
+  ).take(5);
+
+  numberStream.listen((number) {
+    print(number);
+  });
+
+  // Mixins
+  User user = User("John Doe");
+  user.greet();
 }
 
 // isPalindrome (By me)
@@ -69,7 +99,7 @@ Map<String, int> wordsLength(List<String> words) {
   return mappedWord;
 }
 
-// class
+// Class
 class Person {
   String? name;
   int? age;
@@ -81,5 +111,83 @@ class Person {
 
   void introduce() {
     print("Hello, my name is $name and I am $age years old.");
+  }
+}
+
+// Exception
+double divide(int a, int b) {
+  try {
+    return a / b;
+  } catch (e) {
+    print("ERROR: IMPOSSIBLE DE DIVISER PAR 0");
+    return double.nan;
+  }
+}
+
+double divide3(int a, int b) {
+  if (b == 0) {
+    print("ERROR: IMPOSSIBLE DE DIVISER PAR 0");
+    return double.nan;
+  }
+  return a / b;
+}
+
+// Exceptions personnalisées
+class CalculationException implements Exception {
+  final String message;
+  CalculationException(this.message);
+}
+
+class DivisionByZeroException extends CalculationException {
+  DivisionByZeroException() : super('Erreur: Division par zéro');
+}
+
+class InvalidOperatorException extends CalculationException {
+  InvalidOperatorException(String operator)
+    : super('Erreur: Opérateur "$operator" non reconnu');
+}
+
+// Fonction principale avec l'exception
+double calculate(double a, double b, String operator) {
+  try {
+    switch (operator) {
+      case '+':
+        return a + b;
+      case '-':
+        return a - b;
+      case '*':
+        return a * b;
+      case '/':
+        if (b == 0) {
+          throw DivisionByZeroException();
+        }
+        return a / b;
+      default:
+        throw InvalidOperatorException(operator);
+    }
+  } catch (e) {
+    if (e is CalculationException) {
+      print(e.message);
+    } else {
+      print(e);
+    }
+    return double.nan;
+  }
+}
+
+// Mixins
+mixin Logger {
+  void log(String message) {
+    print("Log: $message");
+  }
+}
+
+class User with Logger {
+  String name;
+
+  User(this.name);
+
+  void greet() {
+    log("User $name says hello !");
   }
 }

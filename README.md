@@ -31,7 +31,7 @@ L'objectif de ce projet est de fournir un ensemble d'exercices pratiques pour :
 3. Nombres pairs : Filtre une liste de nombres pour ne garder que les nombres pairs.
 4. Longueur des mots : Crée une map associant chaque mot à sa longueur.
 5. Classe Person : Crée une classe Person avec une méthode d'introduction.
-6. Gestion des erreurs : Gère la division par zéro avec un bloc try-catch.
+6. Gestion des erreurs : Créer une fonction calculatrice qui gère les erreurs de division par zéro et de format avec un bloc try-catch.
 7. Streams : Utilise un stream pour émettre des nombres à intervalles réguliers.
 8. Mixins : Ajoute des fonctionnalités à une classe avec un mixin.
 
