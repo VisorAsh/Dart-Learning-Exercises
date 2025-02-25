@@ -22,6 +22,10 @@ void main() {
   print(isPalindrome("lol"));
   print(isPalindrome("hishaam"));
 
+  print(isPalindrome2("kayak"));
+  print(isPalindrome2("lol"));
+  print(isPalindrome2("hishaam"));
+
   // Liste
   const List<int> nums = [5, 6, 8, 9, 20, 6, 60, 71, 4];
   print(filterEvenNumbers(nums));
@@ -39,8 +43,8 @@ void main() {
   print(divide(10, 2));
   print(divide(10, 0));
 
-  print(divide3(10, 2));
-  print(divide3(10, 0));
+  print(divide2(10, 2));
+  print(divide2(10, 0));
 
   print('10 + 5 = ${calculate(10, 5, '+')}');
   print('10 - 5 = ${calculate(10, 5, '-')}');
@@ -65,15 +69,15 @@ void main() {
 }
 
 // isPalindrome (By me)
-// bool isPalindrome(String string) {
-//   if (string == string.split('').reversed.join('')) {
-//     return true;
-//   }
-//   return false;
-// }
+bool isPalindrome(String string) {
+  if (string == string.split('').reversed.join('')) {
+    return true;
+  }
+  return false;
+}
 
 // isPalindrome (Optimised version)
-bool isPalindrome(String str) {
+bool isPalindrome2(String str) {
   String reversedString = str.split('').reversed.join('');
   return str == reversedString;
 }
@@ -124,7 +128,7 @@ double divide(int a, int b) {
   }
 }
 
-double divide3(int a, int b) {
+double divide2(int a, int b) {
   if (b == 0) {
     print("ERROR: IMPOSSIBLE DE DIVISER PAR 0");
     return double.nan;
