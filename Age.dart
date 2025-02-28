@@ -2,7 +2,7 @@
 // Ecrire un programme qui demande à l'utilisateur son nom et son âge. Le programme doit afficher le nom de l'utilisateur et lui dire combien d'années il lui reste avant d'atteindre son centenaire.
 
 // Consigne :
-// Cet exercice ddoit être lancé dans un terminal (dans celui de vscode par exemple) avec la commande dart Age.dart
+// Cet exercice ddoit être lancé dans un terminal (dans celui de vscode par exemple) avec la commande "dart Age.dart"
 
 import 'dart:io';
 
